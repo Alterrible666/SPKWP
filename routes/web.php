@@ -6,6 +6,7 @@ use App\Http\Controllers\KriteriaController;
 use App\Http\Controllers\AlternatifController;
 use App\Http\Controllers\PenilaianController;
 use App\Http\Controllers\PerhitunganController;
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,10 +58,8 @@ Route::get('/penilaian/{id}/edit', [PenilaianController::class, 'getForms'])->na
 Route::put('/penilaian/update', [PenilaianController::class, 'update'])->name('penilaian.update');
 Route::delete('/penilaian/{id}', [PenilaianController::class, 'destroy'])->name('penilaian.destroy');
 
-// Routing untuk perhitungan TOPSIS
 Route::get('/perhitungan/wp', [PerhitunganController::class, 'wp'])->name('perhitungan.wp');
 
+Route::get('auth/google', [LoginController::class, 'redirectToGoogle']);
+Route::get('auth/google/callback', [LoginController::class, 'handleGoogleCallback']);
 
-Route::get('/about', function () {
-    return view('about');
-})->name('about');

@@ -51,9 +51,9 @@
                                     <hr>
 
                                     <div class="form-group">
-                                        <button type="button" class="btn btn-github btn-user btn-block">
+                                         <a href="{{ url('auth/google') }}" class="btn btn-github btn-user btn-block">
                                             <i class="fab fa-google fa-fw"></i> {{ __('Login with Google') }}
-                                        </button>
+                                        </a>
                                     </div>
 
                                     <div class="form-group">
